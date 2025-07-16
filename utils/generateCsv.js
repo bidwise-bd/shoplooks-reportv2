@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-async function generateCsv(startDate, endDate) {
+export default async function generateCsv(startDate, endDate) {
   const filePath = path.join('/tmp', 'shoplooks-report.csv');
   const headers = 'Date,Clicks,Revenue\n';
   const sampleData = [
@@ -14,5 +14,3 @@ async function generateCsv(startDate, endDate) {
   fs.writeFileSync(filePath, content, 'utf8');
   return filePath;
 }
-
-module.exports = generateCsv;
