@@ -1,6 +1,6 @@
-const generateCsv = require('../utils/generateCsv');
+import generateCsv from '../utils/generateCsv.js';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   const { startDate, endDate } = req.query;
 
   if (!startDate || !endDate) {
@@ -16,4 +16,4 @@ module.exports = async (req, res) => {
     console.error(err);
     return res.status(500).json({ error: 'Failed to generate report' });
   }
-};
+}

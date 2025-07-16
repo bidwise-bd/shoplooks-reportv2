@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "api/report.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/api/report", "dest": "api/report.js" }
-  ]
+  "version": 2
 }
